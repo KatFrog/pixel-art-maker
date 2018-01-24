@@ -5,7 +5,7 @@ let row_id_assign = "";
 let row_id = "";
 
 // Variables for color sizePicker
-let grid_color;
+let grid_color = 'rgb(0,0,0)';
 
 // When size is submitted by the user, call makeGrid()
 function makeGrid() {
@@ -13,16 +13,11 @@ function makeGrid() {
         row_id_assign = "<tr id=\"row" + j + "\">";
         row_id = "#row" + j;
         $('#pixel_canvas').append(row_id_assign);
-        for (k = 1; k <= width; ++k) {
+        for (let k = 1; k <= width; ++k) {
             const row = $(row_id).append("<td>");
             const cell = $(row).children(':last');
-            // Set up event listeners for each cell using JavaScript closures
-            cell.on("click", function(evt) {
-                cell.attr("style", "background-color: " + grid_color);
-            });
         };
     };
-
 };
 
 // Clear the HTML table to allow a new grid to be created
@@ -43,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
         grid_color = $(this).val();
     });
     $('#clear-canvas').on("click", function() {
-        $("#pixel_canvas").find("td").css("background-color", "rgb(254,253,230)");
-    });
+        $("#pixel_canvas").find("td").css("background-color", "rgb(254,253,230)")});
+    $('#pixel_canvas').on('click', 'td', function(evt) {
+        $(evt.target).attr('style', 'background-color: ' + grid_color)});
 });
