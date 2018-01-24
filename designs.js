@@ -42,4 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
     $('#colorPicker').on('change', function(evt) {
         grid_color = $(this).val();
     });
+    $('#clear-canvas').on("click", function() {
+        $("#pixel_canvas").find("td").css("background-color", "rgb(254,253,230)");
+    });
 });

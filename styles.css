@@ -1,5 +1,6 @@
 body {
     text-align: center;
+    background-color: rgb(254,253,230);
 }
 
 h1 {
@@ -34,6 +35,10 @@ h2:first-of-type {
 
 .design-canvas {
     color: rgb(0,0,0);
+}
+
+#clear-canvas {
+    margin: 10px;
 }
 
 table,
