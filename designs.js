@@ -1,8 +1,9 @@
 // Variables for drawing grid
-let width;
-let height;
+let width = 10;
+let height = 10;
 let row_id_assign = "";
 let row_id = "";
+let isDrawing = false;
 
 // Variables for color sizePicker
 let grid_color = 'rgb(0,0,0)';
@@ -26,6 +27,11 @@ function clearGrid() {
 
 // Wait until the DOM is loaded before running jQuery code
 $(document).ready(function() {
+
+    // Initial setup of the drawing grid
+    makeGrid();
+
+    // Event listener for setting up the grid
     $('#size_button').on("click", function(evt) {
         evt.preventDefault();
         width = $('#input_width').val();
@@ -39,12 +45,18 @@ $(document).ready(function() {
             makeGrid();
         }
     });
+
+    // Event listener for color picker
     $('#colorPicker').on('change', function(evt) {
         grid_color = $(this).val();
     });
+
+    // Event listener to clear the canvas
     $('#clear-canvas').on("click", function() {
         $("#pixel_canvas").find("td").css("background-color", "rgb(254,253,230)")
     });
+
+    // Event listener to change the background color on a single click
     $('#pixel_canvas').on('click', 'td', function(evt) {
         if ($(evt.target).hasClass('clicked')) {
             $(evt.target).attr('style', 'background-color: rgb(254,253,230)');
@@ -53,5 +65,22 @@ $(document).ready(function() {
             $(evt.target).attr('style', 'background-color: ' + grid_color);
             $(evt.target).addClass('clicked');
         };
+    });
+
+    // Event listeners to turn continuous drawing on and off
+    $("#pixel_canvas").mousedown(function(evt) {
+        isDrawing = true;
+    });
+
+    $("#pixel_canvas").mouseup(function(evt) {
+        isDrawing = false;
+    });
+
+    // Event listener to paint the canvas continuously
+    $("#pixel_canvas").mouseover(function(evt) {
+        if (isDrawing) {
+            $(evt.target).attr('style', 'background-color: ' + grid_color);
+            $(evt.target).addClass('clicked');
+        }
     });
 });
