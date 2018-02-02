@@ -33,7 +33,7 @@ $(document).ready(function() {
     makeGrid(defaultHeight, defaultWidth);
 
     // Event listener for setting up the grid
-    $('#size_button').on("click", function(evt) {
+    $('#size-button').on("click", function(evt) {
         evt.preventDefault();
         let width = $('#input_width').val();
         let height = $('#input_height').val();

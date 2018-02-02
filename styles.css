@@ -35,10 +35,50 @@ h2:first-of-type {
 
 .design-canvas {
     color: rgb(0,0,0);
+    margin-bottom: 10px;
 }
 
 #clear-canvas {
-    margin: 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    display: block;
+    position: relative;
+    font-size: 18px;
+    margin: 0px auto;
+    border-radius: 10px;
+    box-shadow: 0px 6px #f2e356;
+}
+
+#clear-canvas:hover {
+    box-shadow: 0px 4px #f2e356;
+    top: 2px;
+}
+
+#clear-canvas:active {
+    box-shadow: none;
+    top: 6px;
+}
+
+#size-button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  font-size: 18px;
+  border-radius: 10px;
+  box-shadow: 0px 6px #f2e356;
+}
+
+#size-button:hover {
+    box-shadow: 0px 4px #f2e356;
+    top: 2px;
+}
+
+#size-button:active {
+    box-shadow: none;
+    top: 6px;
 }
 
 table,
@@ -49,7 +89,8 @@ td {
 
 table {
     border-collapse: collapse;
-    margin: 0 auto;
+    margin: 0px auto;
+    margin-top: 20px;
 }
 
 tr {
