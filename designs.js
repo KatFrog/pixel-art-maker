@@ -9,12 +9,12 @@ const defaultWidth = 10;
 
 // When size is submitted by the user, call makeGrid()
 function makeGrid(height, width) {
-    let rowId_assign = "";
+    let rowIdAssign = "";
     let rowId = "";
     for (let j = 1; j <= height; ++j) {
-        rowId_assign = "<tr id=\"row" + j + "\">";
+        rowIdAssign = "<tr id=\"row" + j + "\">";
         rowId = "#row" + j;
-        $("#pixel_canvas").append(rowId_assign);
+        $("#pixel_canvas").append(rowIdAssign);
         for (let k = 1; k <= width; ++k) {
             $(rowId).append("<td>");
         }
@@ -24,7 +24,7 @@ function makeGrid(height, width) {
 // Clear the HTML table to allow a new grid to be created
 function clearGrid() {
     $("#pixel_canvas").empty();
-};
+}
 
 // Wait until the DOM is loaded before running jQuery code
 $(document).ready(function() {

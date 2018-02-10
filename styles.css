@@ -1,6 +1,7 @@
 body {
+    background-color: rgb(254, 253, 230);
     text-align: center;
-    background-color: rgb(254,253,230);
+
 }
 
 h1 {
@@ -10,16 +11,18 @@ h1 {
 }
 
 .title {
-    background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
-    background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
-    color:transparent;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.7),
-                 5px 5px 1px orange,
-                 6px 6px 2px rgba(0,0,0,0.7),
-                 10px 10px 1px red,
-                 11px 11px 2px rgba(0,0,0,0.7),
-                 15px 15px 1px purple,
-                 16px 16px 2px rgba(0,0,0,0.7);
+      background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2), color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22));
+      background-image: -ms-linear-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2), color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22));
+      background-image: -ms-radial-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2), color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22));
+      background-image: -moz-linear-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2), color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22));
+      background-image: -moz-radial-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2), color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22));
+      background-image: -o-linear-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2), color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22));
+      background-image: -o-radial-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2), color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22));
+      background-image: -webkit-linear-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2), color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22));
+      background-image: -webkit-radial-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2), color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22));
+      background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2), color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22));
+      color: transparent;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7), 5px 5px 1px orange, 6px 6px 2px rgba(0, 0, 0, 0.7), 10px 10px 1px red, 11px 11px 2px rgba(0, 0, 0, 0.7), 15px 15px 1px purple, 16px 16px 2px rgba(0, 0, 0, 0.7);
 }
 
 h2 {
@@ -30,77 +33,74 @@ h2:first-of-type {
     margin-top: 0.5em;
 }
 
-.size-picker {
-    color: rgb(0,0,223);
+.sizePicker {
+    color: rgb(0, 0, 223);
 }
 
-.color-picker {
-    color:  rgb(0,233,80);
+.colorPicker {
+    color: rgb(0, 233, 80);
 }
 
-.design-canvas {
-    color: rgb(0,0,0);
+.designCanvas {
+    color: rgb(0, 0, 0);
     margin-bottom: 10px;
 }
 
-#clear-canvas {
-    outline: none;
+.clearCanvas {
     border: none;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 6px #f2e356;
+    box-shadow: 0 6px #f2e356;
     cursor: pointer;
     display: block;
-    position: relative;
     font-size: 18px;
-    margin: 0px auto;
+    margin: 0 auto;
+    position: relative;
+}
+
+.clearCanvas:hover {
+    -webkit-box-shadow: 0 4px #f2e356;
+    box-shadow: 0 4px #f2e356;
+    top: 2px;
+}
+
+.clearCanvas:active {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    top: 6px;
+}
+
+.sizeButton {
+    border: none;
     border-radius: 10px;
-    -webkit-box-shadow: 0px 6px #f2e356;
-            box-shadow: 0px 6px #f2e356;
+    -webkit-box-shadow: 0 6px #f2e356;
+    box-shadow: 0 6px #f2e356;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 18px;
+    position: relative;
 }
 
-#clear-canvas:hover {
-    -webkit-box-shadow: 0px 4px #f2e356;
-            box-shadow: 0px 4px #f2e356;
+.sizeButton:hover {
+    -webkit-box-shadow: 0 4px #f2e356;
+    box-shadow: 0 4px #f2e356;
     top: 2px;
+
 }
 
-#clear-canvas:active {
+.sizeButton:active {
     -webkit-box-shadow: none;
-            box-shadow: none;
+    box-shadow: none;
     top: 6px;
 }
 
-#size-button {
-  outline: none;
-  border: none;
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  font-size: 18px;
-  border-radius: 10px;
-  -webkit-box-shadow: 0px 6px #f2e356;
-          box-shadow: 0px 6px #f2e356;
-}
-
-#size-button:hover {
-    -webkit-box-shadow: 0px 4px #f2e356;
-            box-shadow: 0px 4px #f2e356;
-    top: 2px;
-}
-
-#size-button:active {
-    -webkit-box-shadow: none;
-            box-shadow: none;
-    top: 6px;
-}
-
-table,
-tr,
-td {
+table, tr, td {
     border: 1px solid black;
 }
 
 table {
     border-collapse: collapse;
-    margin: 0px auto;
+    margin: 0 auto;
     margin-top: 20px;
 }
 

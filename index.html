@@ -9,21 +9,21 @@
 <body>
     <h1 class="title">Pixel Art Maker</h1>
 
-    <h2 class="size-picker">Choose Grid Size</h2>
+    <h2 class="sizePicker">Choose Grid Size</h2>
     <p>Please enter a number between 1 and 60 for the height and width.</p>
     <form id="sizePicker">
         Grid Height:
         <input type="number" id="input_height" name="height" min="1" max="60" value="10">
         Grid Width:
         <input type="number" id="input_width" name="width" min="1" max="60" value="10">
-        <input type="submit" id="size-button">
+        <input type="submit" class="sizeButton" id="size-button">
     </form>
 
-    <h2 class="color-picker">Pick A Color</h2>
+    <h2 class="colorPicker">Pick A Color</h2>
     <input type="color" id="colorPicker">
 
-    <h2 class="design-canvas">Design Canvas</h2>
-    <button name="clearCanvas" id="clear-canvas" type="button">Clear Canvas</button>
+    <h2 class="designCanvas">Design Canvas</h2>
+    <button name="clearCanvas" class="clearCanvas" id="clear-canvas" type="button">Clear Canvas</button>
     <table id="pixel_canvas"></table>
 
     <script src="designs.js"></script>
