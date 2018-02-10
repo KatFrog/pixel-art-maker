@@ -65,7 +65,7 @@ $(document).ready(function() {
         } else {
             $(evt.target).attr("style", "background-color: " + gridColor);
             $(evt.target).addClass("clicked");
-        };
+        }
     });
 
     // Event listeners to turn continuous drawing on and off
