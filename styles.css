@@ -35,10 +35,16 @@ h2:first-of-type {
 
 .sizePicker {
     color: rgb(0, 0, 223);
+    margin: 10px;
+    padding: 5px;
 }
 
 .colorPicker {
-    color: rgb(0, 233, 80);
+    color: #cd092d;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px;
+    padding: 10px;
 }
 
 .designCanvas {
@@ -46,7 +52,7 @@ h2:first-of-type {
     margin-bottom: 10px;
 }
 
-.clearCanvas {
+.button {
     border: none;
     border-radius: 10px;
     -webkit-box-shadow: 0 6px #f2e356;
@@ -54,20 +60,25 @@ h2:first-of-type {
     cursor: pointer;
     display: block;
     font-size: 18px;
-    margin: 0 auto;
+    margin: 5px auto;
+    padding: 5px;
     position: relative;
 }
 
-.clearCanvas:hover {
+.button:hover {
     -webkit-box-shadow: 0 4px #f2e356;
     box-shadow: 0 4px #f2e356;
     top: 2px;
 }
 
-.clearCanvas:active {
+.button:active {
     -webkit-box-shadow: none;
     box-shadow: none;
     top: 6px;
+}
+
+.randomColor {
+  color: blue;
 }
 
 .sizeButton {
@@ -92,6 +103,14 @@ h2:first-of-type {
     -webkit-box-shadow: none;
     box-shadow: none;
     top: 6px;
+}
+
+.sizeForm {
+  margin: 15px;
+}
+
+i {
+  color: #16a085;
 }
 
 table, tr, td {

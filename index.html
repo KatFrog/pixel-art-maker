@@ -5,25 +5,30 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monoton">
     <link rel="stylesheet" href="styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1 class="title">Pixel Art Maker</h1>
+  <h1 class="title">Pixel Art Maker</h1>
 
     <h2 class="sizePicker">Choose Grid Size</h2>
     <p>Please enter a number between 1 and 60 for the height and width.</p>
-    <form id="sizePicker">
+    <form id="sizePicker" class="sizeForm">
         Grid Height:
         <input type="number" id="input_height" name="height" min="1" max="60" value="10">
         Grid Width:
         <input type="number" id="input_width" name="width" min="1" max="60" value="10">
-        <input type="submit" class="sizeButton" id="size-button">
+        <input type="submit" class="button" id="size-button">
     </form>
+          <p class="colorPicker">Pick A Color...
+            <input type="color" id="colorPicker"></p>
+          <p class="colorPicker"> Or Use Random Color Mode!
+            <button name="randomColor" class="button" id="randomColor"><i class="fas fa-smile fa-2x randomColor"></i></button></p>
 
-    <h2 class="colorPicker">Pick A Color</h2>
-    <input type="color" id="colorPicker">
 
     <h2 class="designCanvas">Design Canvas</h2>
-    <button name="clearCanvas" class="clearCanvas" id="clear-canvas" type="button">Clear Canvas</button>
+    <button name="clearCanvas" class="button" id="clear-canvas" type="button">Clear Canvas</button>
     <table id="pixel_canvas"></table>
 
     <script src="designs.js"></script>

@@ -1,6 +1,7 @@
 // Variables and constants for the Pixel Art Maker
 let gridColor = "rgb(0,0,0)";
 let isDrawing = false;
+let randomMode = false;
 const bgColor = "rgb(254,253,230)";
 const defaultHeight = 10;
 const defaultWidth = 10;
@@ -26,6 +27,11 @@ function clearGrid() {
     $("#pixel_canvas").empty();
 }
 
+// From http://webdesignnomad.com/snippets/random-color-javascript/
+// Creates a random hex color for Random Color Mode
+function random_hex(){
+    return '#' + Math.floor(Math.random()*16777215).toString(16);
+}
 // Wait until the DOM is loaded before running jQuery code
 $(document).ready(function() {
 
@@ -63,10 +69,34 @@ $(document).ready(function() {
             $(evt.target).attr("style", "background-color: " + bgColor);
             $(evt.target).removeClass("clicked");
         } else {
+            gridColor = newColor();
             $(evt.target).attr("style", "background-color: " + gridColor);
             $(evt.target).addClass("clicked");
         }
     });
+
+    // Turn random color mode on and off
+    $("#randomColor").on("click", function(evt) {
+      if (randomMode) {
+        randomMode = false;
+        $(".randomColor").attr("style", "color: blue");
+      } else {
+        randomMode = true;
+        $(".randomColor").attr("style", "color: green");
+      }
+    });
+
+    // Set the grid color based on whether or not random color mode is enabled
+    function newColor () {
+      let tempColor;
+      if (randomMode) {
+        tempColor = random_hex();
+      } else {
+        tempColor  = $("#colorPicker").val();
+      }
+      return tempColor;
+    }
+
 
     // Event listeners to turn continuous drawing on and off
     $("#pixel_canvas").mousedown(function(evt) {
@@ -80,6 +110,7 @@ $(document).ready(function() {
     // Event listener to paint the canvas continuously
     $("#pixel_canvas").mouseover(function(evt) {
         if (isDrawing) {
+            gridColor = newColor();
             $(evt.target).attr("style", "background-color: " + gridColor);
             $(evt.target).addClass("clicked");
         }
