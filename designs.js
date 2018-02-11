@@ -29,9 +29,22 @@ function clearGrid() {
 
 // From http://webdesignnomad.com/snippets/random-color-javascript/
 // Creates a random hex color for Random Color Mode
-function random_hex(){
-    return '#' + Math.floor(Math.random()*16777215).toString(16);
+function randomHex(){
+    return "#" + Math.floor(Math.random()*16777215).toString(16);
 }
+
+// Set the grid color based on whether or not random color mode is enabled
+function newColor () {
+  let tempColor;
+  if (randomMode) {
+    tempColor = randomHex();
+  } else {
+    tempColor  = $("#colorPicker").val();
+  }
+  return tempColor;
+}
+
+
 // Wait until the DOM is loaded before running jQuery code
 $(document).ready(function() {
 
@@ -85,18 +98,6 @@ $(document).ready(function() {
         $(".randomColor").attr("style", "color: green");
       }
     });
-
-    // Set the grid color based on whether or not random color mode is enabled
-    function newColor () {
-      let tempColor;
-      if (randomMode) {
-        tempColor = random_hex();
-      } else {
-        tempColor  = $("#colorPicker").val();
-      }
-      return tempColor;
-    }
-
 
     // Event listeners to turn continuous drawing on and off
     $("#pixel_canvas").mousedown(function(evt) {
