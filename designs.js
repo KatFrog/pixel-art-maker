@@ -5,19 +5,17 @@ let randomMode = false;
 const bgColor = "rgb(254,253,230)";
 const defaultHeight = 10;
 const defaultWidth = 10;
+const minCanvasSize = 1;
+const maxCanvasSize = 60;
 
 
 
 // When size is submitted by the user, call makeGrid()
 function makeGrid(height, width) {
-    let rowIdAssign = "";
-    let rowId = "";
     for (let j = 1; j <= height; ++j) {
-        rowIdAssign = "<tr id=\"row" + j + "\">";
-        rowId = "#row" + j;
-        $("#pixel_canvas").append(rowIdAssign);
+        $("#pixel_canvas").append("<tr>");
         for (let k = 1; k <= width; ++k) {
-            $(rowId).append("<td>");
+            $("tr:last-child").append("<td>");
         }
     }
 }
@@ -56,10 +54,10 @@ $(document).ready(function() {
         evt.preventDefault();
         let width = $("#input_width").val();
         let height = $("#input_height").val();
-        if ((width > 60) || (width <= 0)){
-            alert("Please pick a width between 1 and 60.");
-        } else if ((height > 60) || (height <= 0)){
-            alert("Please pick a height between 1 and 60.");
+        if ((width <= minCanvasSize) || (width > maxCanvasSize)){
+            alert("Please pick a width between " + minCanvasSize + " and " + maxCanvasSize + ".");
+        } else if ((height <= minCanvasSize) || (height > maxCanvasSize)){
+            alert("Please pick a height between " + minCanvasSize + " and " + maxCanvasSize + ".");
         } else {
             clearGrid();
             makeGrid(height, width);
