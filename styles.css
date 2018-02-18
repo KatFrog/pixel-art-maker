@@ -4,6 +4,7 @@ body {
     grid-auto-rows: minmax(100px, auto);
     grid-column-gap: 10px;
     grid-row-gap: 10px;
+    grid-template-columns: auto;
 }
 
 h1 {
@@ -26,6 +27,7 @@ h1 {
       color: transparent;
       grid-column: 1/4;
       grid-row: 1;
+      text-align: center;
       text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7), 5px 5px 1px orange, 6px 6px 2px rgba(0, 0, 0, 0.7), 10px 10px 1px red, 11px 11px 2px rgba(0, 0, 0, 0.7), 15px 15px 1px purple, 16px 16px 2px rgba(0, 0, 0, 0.7);
 }
 
@@ -36,8 +38,6 @@ h2 {
 }
 
 .pick-forms {
-  border: 1px solid pink;
-  display: flex;
   flex-flow: column wrap;
   grid-column: 1;
   grid-row: 2;
@@ -60,9 +60,10 @@ h2 {
     padding: 10px;
 }
 
-.designCanvas {
-    color: rgb(0, 0, 0);
-    margin-bottom: 10px;
+.design-canvas {
+    color: indigo;
+    font-size: 30px;
+    font-weight: bold;
     text-align: center;
 }
 
@@ -89,32 +90,17 @@ h2 {
     top: 6px;
 }
 
-.randomColor {
+.erase-canvas {
+    margin: 10px auto;
+    width: fit-content;
+}
+
+.icon-color {
   color: blue;
 }
 
-.sizeButton {
-    border: none;
-    border-radius: 10px;
-    -webkit-box-shadow: 0 6px #f2e356;
-    box-shadow: 0 6px #f2e356;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 18px;
-    position: relative;
-}
-
-.sizeButton:hover {
-    -webkit-box-shadow: 0 4px #f2e356;
-    box-shadow: 0 4px #f2e356;
-    top: 2px;
-
-}
-
-.sizeButton:active {
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    top: 6px;
+.random-color {
+  border: 4px solid green;
 }
 
 .sizeForm {
@@ -132,7 +118,7 @@ table, tr, td {
 table {
     border-collapse: collapse;
     margin: 0 auto;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 tr {
