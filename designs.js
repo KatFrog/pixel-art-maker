@@ -115,17 +115,6 @@ $(document).ready(function() {
         }
     });
 
-/*    // Turn random color mode on and off
-    $("#randomColor").on("click", function(evt) {
-      evt.preventDefault();
-      const randomColor = $("#randomColor");
-      if (randomMode) {
-        randomMode = false;
-      } else {
-        randomMode = true;
-      }
-    }); */
-
     // Event listeners to turn continuous drawing on and off
     drawingCanvas.mousedown(function(evt) {
         isDrawing = true;
