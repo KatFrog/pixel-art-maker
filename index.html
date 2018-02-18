@@ -20,22 +20,27 @@
         <h2 class="sizePicker">Choose Canvas Size</h2>
         <form id="sizePicker" class="sizeForm">
             <p>Canvas Height:
-                <input type="number" id="input_height" name="height" value="10"></p>
+                <input type="number" id="input_height" name="height"></p>
             <p>Canvas Width:
-                <input type="number" id="input_width" name="width" value="10"></p>
+                <input type="number" id="input_width" name="width"></p>
             <p><input type="submit" class="button" id="size-button"></p>
         </form>
-        <h2>Choose A Color</h2>
-            <p>Use the color picker:&nbsp &nbsp
-                <input type="color" id="colorPicker"></p>
-            <p> Use random color mode! <i class="fas fa-ban" id="randomClicked"></i>
-                <button name="randomColorMode" class="button" id="randomColor"><i class="fas fa-smile fa-2x randomColor"></i></button></p>
+        <h2>Choose Coloring Mode</h2>
+        <form id="colorPickerForm" class="colorForm">
+            <p><input type="radio" name="pickAMode" id="pickedMode"><label>One Color</label></p>
+            <p><input type="radio" name="pickAMode" id="randomColors"><label>Random Colors</label></p>
+        </form>
+        <br>
+        <div id="pickColor" class="pick-color">
+            <label>Please pick the color you wish to use:&nbsp&nbsp</label>
+            <input type="color" id="colorPicker">
+        </div>
     </div>
 
     <div class="design-canvas-group">
-        <h2 class="designCanvas">Design Canvas</h2>
-        <button name="clearCanvas" class="button" id="clear-canvas" type="button">Clear Canvas</button>
+        <h2 class="design-canvas">Design Canvas</h2>
         <table id="pixel_canvas"></table>
+        <button name="eraseCanvas" class="button erase-canvas" id="erase-canvas" type="button">Erase Canvas</button>
     </div>
 
     <script src="designs.js"></script>

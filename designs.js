@@ -3,14 +3,15 @@ let canvasColor = "rgb(0,0,0)";
 let isDrawing = false;
 let randomMode = false;
 const bgColor = "rgb(254,253,230)";
-const defaultHeight = 10;
-const defaultWidth = 10;
+const defaultHeight = 20;
+const defaultWidth = 20;
 const minCanvasSize = 1;
 const maxCanvasSize = 40;
 const drawingCanvas = $("#pixel_canvas");
 const colorPicker = $("#colorPicker");
 const inputHeight = $("#input_height");
 const inputWidth = $("#input_width");
+const eraseCanvas = $("#erase-canvas");
 
 
 
@@ -56,10 +57,12 @@ $(document).ready(function() {
     // Set up the min and max for input height
     inputHeight.attr("min", minCanvasSize.toString());
     inputHeight.attr("max", maxCanvasSize.toString());
+    inputHeight.attr("value", defaultHeight.toString());
 
     // Set up the min and max values for input width
     inputWidth.attr("min", minCanvasSize.toString());
     inputWidth.attr("max", maxCanvasSize.toString());
+    inputWidth.attr("value", defaultWidth.toString());
 
 
 
@@ -68,9 +71,9 @@ $(document).ready(function() {
         evt.preventDefault();
         let width = inputWidth.val();
         let height = inputHeight.val();
-        if ((width <= minCanvasSize) || (width > maxCanvasSize)){
+        if ((width < minCanvasSize) || (width > maxCanvasSize)){
             alert("Please pick a width between " + minCanvasSize + " and " + maxCanvasSize + ".");
-        } else if ((height <= minCanvasSize) || (height > maxCanvasSize)){
+        } else if ((height < minCanvasSize) || (height > maxCanvasSize)){
             alert("Please pick a height between " + minCanvasSize + " and " + maxCanvasSize + ".");
         } else {
             clearCanvas();
@@ -78,13 +81,25 @@ $(document).ready(function() {
         }
     });
 
+    // Event listeners for choosing coloring Mode
+    $("#pickedMode").on("click", function(evt) {
+        $(".pick-color").css("opacity", 1);
+        randomMode = false;
+    });
+
+    $("#randomColors").on("click", function(evt) {
+      $(".pick-color").css("opacity", 0);
+      randomMode = true;
+    });
+
+
     // Event listener for color picker
     colorPicker.on("change", function(evt) {
         canvasColor = $(this).val();
     });
 
-    // Event listener to clear the canvas
-    $("#clear-canvas").on("click", function() {
+    // Event listener to erase the canvas
+    eraseCanvas.on("click", function() {
         drawingCanvas.find("td").css("background-color", bgColor);
     });
 
@@ -100,20 +115,16 @@ $(document).ready(function() {
         }
     });
 
-    // Turn random color mode on and off
+/*    // Turn random color mode on and off
     $("#randomColor").on("click", function(evt) {
       evt.preventDefault();
-      const randomClicked = $("#randomClicked");
+      const randomColor = $("#randomColor");
       if (randomMode) {
         randomMode = false;
-        randomClicked.removeClass("fa-check");
-        randomClicked.addClass("fa-ban");
       } else {
         randomMode = true;
-        randomClicked.removeClass("fa-ban");
-        randomClicked.addClass("fa-check");
       }
-    });
+    }); */
 
     // Event listeners to turn continuous drawing on and off
     drawingCanvas.mousedown(function(evt) {
