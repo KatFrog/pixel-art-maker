@@ -53,9 +53,6 @@ h2 {
 }
 
 .colorPicker {
-    color: #cd092d;
-    font-size: 24px;
-    font-weight: bold;
     margin: 10px;
     padding: 10px;
 }
@@ -99,8 +96,8 @@ h2 {
   color: blue;
 }
 
-.random-color {
-  border: 4px solid green;
+.pick-color {
+  opacity: 0;
 }
 
 .sizeForm {
@@ -108,7 +105,7 @@ h2 {
 }
 
 i {
-  color: #16a085;
+  color: blue;
 }
 
 table, tr, td {

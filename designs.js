@@ -81,12 +81,24 @@ $(document).ready(function() {
         }
     });
 
+    // Event listeners for choosing coloring Mode
+    $("#pickedMode").on("click", function(evt) {
+        $(".pick-color").css("opacity", 1);
+        randomMode = false;
+    });
+
+    $("#randomColors").on("click", function(evt) {
+      $(".pick-color").css("opacity", 0);
+      randomMode = true;
+    });
+
+
     // Event listener for color picker
     colorPicker.on("change", function(evt) {
         canvasColor = $(this).val();
     });
 
-    // Event listener to clear the canvas
+    // Event listener to erase the canvas
     eraseCanvas.on("click", function() {
         drawingCanvas.find("td").css("background-color", bgColor);
     });
@@ -103,18 +115,16 @@ $(document).ready(function() {
         }
     });
 
-    // Turn random color mode on and off
+/*    // Turn random color mode on and off
     $("#randomColor").on("click", function(evt) {
       evt.preventDefault();
       const randomColor = $("#randomColor");
       if (randomMode) {
         randomMode = false;
-        randomColor.removeClass("random-color");
       } else {
         randomMode = true;
-        randomColor.addClass("random-color");
       }
-    });
+    }); */
 
     // Event listeners to turn continuous drawing on and off
     drawingCanvas.mousedown(function(evt) {

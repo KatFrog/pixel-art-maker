@@ -25,11 +25,16 @@
                 <input type="number" id="input_width" name="width"></p>
             <p><input type="submit" class="button" id="size-button"></p>
         </form>
-        <h2>Choose A Color</h2>
-            <p>Use the color picker:&nbsp &nbsp
-                <input type="color" id="colorPicker"></p>
-            <p> Use random color mode! &nbsp &nbsp
-                <button name="randomColorMode" class="button" id="randomColor"><i class="fas fa-smile fa-2x icon-color"></i></button></p>
+        <h2>Choose Coloring Mode</h2>
+        <form id="colorPickerForm" class="colorForm">
+            <p><input type="radio" name="pickAMode" id="pickedMode"><label>One Color</label></p>
+            <p><input type="radio" name="pickAMode" id="randomColors"><label>Random Colors</label></p>
+        </form>
+        <br>
+        <div id="pickColor" class="pick-color">
+            <label>Please pick the color you wish to use:&nbsp&nbsp</label>
+            <input type="color" id="colorPicker">
+        </div>
     </div>
 
     <div class="design-canvas-group">
